@@ -25,15 +25,15 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" onclick= "goToHomePage()" >Home</a>
+                <a class="nav-link" aria-current="page" id = "home-page-id" href="#" onclick= "goToHomePage()" >Home</a>
               </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link " aria-current="page" href="#" onclick= "goToSignUpPage()">Sign Up</a>
+                  <a class="nav-link " aria-current="page" id = "signup-page-id" href="#" onclick= "goToSignUpPage()">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="#" onclick= "goToLoginPage()">Login</a>
+                    <a class="nav-link " aria-current="page" id = "login-page-id" href="#" onclick= "goToLoginPage()">Login</a>
                 </li>
               </ul>
           </div>
@@ -49,28 +49,41 @@
      <div id="sign-up">
         <form class="row g-3"  >
             <h1 class = "display-2" style ="font-size: 30px; text-align: center">Sign Up</h1>
+
             <div class="col-md-6">
               <label for="first-name" class="form-label">First name</label>
-              <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-              <div class="valid-feedback">
+              <input type="text" class="form-control" id="firstName-input" onchange = "checkCondition()" value="" required>
+              <div class="valid-feedback" id = "valid-feedback-first-name">
                 Looks good!
               </div>
+
+              <div class="invalid-feedback" id = "invalid-feedback-first-name">
+                Invalid First Name!!
+              </div>
             </div>
+
             <div class="col-md-6">
               <label for="last-name" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-              <div class="valid-feedback">
+              <input type="text" class="form-control" id="lastName-input" onchange = "checkCondition()" value="" required>
+              <div class="valid-feedback" id = "valid-feedback-last-name">
                 Looks good!
+              </div>
+              <div class="invalid-feedback" id = "invalid-feedback-last-name">
+                Invalid Last Name!!
               </div>
             </div>
             <div class="col-md-6">
               <label for="email" class="form-label">Email</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
+                <input type="text" class="form-control" id="email-input" onchange = "checkCondition()" value="" aria-describedby="inputGroupPrepend" id = "email-valid-feedback" required>
+                <div class="valid-feedback" id = "email-valid-feedback">
                   Please choose a username.
                 </div>
+
+                <div class="invalid-feedback" id = "email-invalid-feedback">
+                    Invalid User Name!!
+                  </div>
               </div>
             </div>
     
@@ -78,27 +91,39 @@
               <label for="phone-no" class="form-label">Phone Number</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">+91</span>
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
+                <input type="text" value="" class="form-control" id="phone-input" onchange = "checkCondition()" aria-describedby="inputGroupPrepend" required>
+                <div class="valid-feedback" id = "phone-valid-feedback">
                   Please enter your Phone Number.
                 </div>
+
+                <div class="invalid-feedback" id = "phone-invalid-feedback">
+                    Invalid Phone Number!!
+                  </div>
               </div>
             </div>
       
             <div class="col-md-6">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="validationCustom05" required>
-              <div class="invalid-feedback">
-                Please provide a valid zip.
+              <input type="password" class="form-control" value="" id="password-input" onchange = "checkCondition()" required>
+              <div class="valid-feedback" id = "password-valid-feedback">
+                Good Password
               </div>
+
+              <div class="invalid-feedback" id = "password-invalid-feedback">
+                Not Good Password!!
+                </div>
             </div>
     
             <div class="col-md-6">
                 <label for="confirm-password" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="validationCustom05" required>
-                <div class="invalid-feedback">
-                  Please provide a valid zip.
+                <input type="password" class="form-control" value="" id="confirm-password-input" onchange = "checkCondition()" required>
+                <div class="valid-feedback" id = "confirm-password-valid-feedback">
+                  Matched with Password
                 </div>
+
+                <div class="invalid-feedback" id = "confirm-password-invalid-feedback">
+                    Not Matched with Password!!
+                  </div>
               </div>
     
             <div class="col-12" style = "text-align: center;">
