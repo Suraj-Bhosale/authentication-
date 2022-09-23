@@ -127,7 +127,7 @@
               </div>
     
             <div class="col-12" style = "text-align: center;">
-              <button class="btn btn-dark" type="submit">Sign Up</button>
+              <button class="btn btn-dark" type="submit" value = "true" id = "signup-input" onclick = "checkCondition()">Sign Up</button>
             </div>
         </form>
      </div>
@@ -142,23 +142,31 @@
               <label for="email" class="form-label">Email</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                  Please choose a username.
+                <input type="text" class="form-control" id="login-email-input" onchange = "loginApp()" aria-describedby="inputGroupPrepend" required>
+                <div class="valid-feedback" id = "validLogin-email-feedback">
+                  Superb Correct Email ID
+                </div>
+
+                <div class="invalid-feedback" id = "invalidLogin-email-feedback">
+                  Sorry! Email ID is wrong
                 </div>
               </div>
             </div>
       
             <div class="col-md-6 offset-md-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="validationCustom05" required>
-              <div class="invalid-feedback">
-                Please provide a valid zip.
+              <input type="password" class="form-control" onchange = "loginApp()" id="login-password-input" required>
+              <div class="valid-feedback" id = "validLogin-password-feedback">
+                Superb Correct Password
+              </div>
+
+              <div class="invalid-feedback" id = "invalidLogin-password-feedback">
+                Sorry! Password is wrong
               </div>
             </div>
     
             <div class="col-12" style = "text-align: center;">
-              <button class="btn btn-dark" type="submit">Login</button>
+              <button class="btn btn-dark" value ="" id = "login-input" onclick = "loginApp()" type="submit">Login</button>
             </div>
         </form>
       </div>
